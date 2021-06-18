@@ -10,14 +10,20 @@ namespace GamesTan.Lec03_CmdGame {
         List<Enemy> allEnemies = new List<Enemy>();
         List<Player> allPlayers = new List<Player>();
 
+        static Random rand = new Random();
+        public static float RangePos(float minVal, float maxVal) {
+            var num01 = (float)(rand.Next(0, 10000000) * 0.0000001);
+            return num01 * (maxVal - minVal) + minVal;
+        }
+
         public void Awake() {
             Instance = this;
             Console.WriteLine("DoAwake()");
             int id = 0;
-            allEnemies.Add(CreateEnemy(id++, 200, 20));
-            allEnemies.Add(CreateEnemy(id++, 200, 20));
-            allEnemies.Add(CreateEnemy(id++, 200, 20));
-            allPlayers.Add(CreatePlayer(id++, 1000, 40));
+            allEnemies.Add(CreateEntity<Enemy>(id++, 200, 20));
+            allEnemies.Add(CreateEntity<Enemy>(id++, 200, 20));
+            allEnemies.Add(CreateEntity<Enemy>(id++, 200, 20));
+            allPlayers.Add(CreateEntity<Player>(id++, 1000, 40));
         }
         public void OnDied(Entity entity) {
             Console.WriteLine($"{entity.name} died");
@@ -44,17 +50,18 @@ namespace GamesTan.Lec03_CmdGame {
         }
 
 
-        private static Player CreatePlayer(int id, int health, int damage) {
-            var entity = new Player() { name = typeof(Player).Name + id, health = health, damage = damage };
+
+        public static T CreateEntity<T>(int id, int health, int damage) where T : Entity, new() {
+            float x = RangePos(-20, 20);
+            float y = RangePos(-20, 20);
+            var entity = new T() { name = typeof(T).Name + id, health = health, damage = damage };
+            entity.x = x;
+            entity.y = y;
             entity.Awake();
+            Console.WriteLine($"({ x},{y})");
             return entity;
         }
 
-        private static Enemy CreateEnemy(int id, int health, int damage) {
-            var entity = new Enemy() { name = typeof(Enemy).Name + id, health = health, damage = damage };
-            entity.Awake();
-            return entity;
-        }
 
         public bool IsGameOver = false;
         public void Update() {
