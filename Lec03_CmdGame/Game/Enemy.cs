@@ -6,6 +6,7 @@ namespace GamesTan.Lec03_CmdGame {
         float escapeStopDist = 6;
         float escapeSpeed = 2;
         public override void Update() {
+            base.Update();
             var target = Game.Instance.GetPlayer();
             Attack(target);
             if (health < initHealth * escapeHealthPercent ) {

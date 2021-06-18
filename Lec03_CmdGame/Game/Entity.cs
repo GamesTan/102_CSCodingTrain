@@ -58,7 +58,7 @@ namespace GamesTan.Lec03_CmdGame {
         }
 
         public override string ToString() {
-            return $"{name} ({x},{y}) health:{health} damage {damage}";
+            return $"{name} ({(int)x},{(int)y}) health:{health} damage {damage } isHurted {isHurted}";
         }
     }
 }

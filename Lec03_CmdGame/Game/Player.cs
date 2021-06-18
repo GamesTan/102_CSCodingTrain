@@ -5,7 +5,7 @@ namespace GamesTan.Lec03_CmdGame {
 
         public float moveSpeed = 1; // 移动速度
         public override void Update() {
-
+            base.Update();
             // 靠近敌人
             var target = Game.Instance.GetEnemy(x,y);
             if (target == null) return;
