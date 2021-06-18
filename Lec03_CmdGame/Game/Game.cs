@@ -52,8 +52,21 @@ namespace GamesTan.Lec03_CmdGame {
             allPlayers.Remove(entity);
         }
 
-        public Enemy GetEnemy() {
-            if (allEnemies.Count > 0) return allEnemies[0];
+        public Enemy GetEnemy(float x,float y) {
+            if (allEnemies.Count > 0) {
+                double minDist = float.MaxValue;
+                Enemy target = null;
+                foreach (var item in allEnemies) {
+                    var tx = item.x - x;
+                    var ty = item.y - y;
+                    var dist = Math.Sqrt(tx * tx + ty * ty);
+                    if (dist < minDist) {
+                        target = item;
+                        minDist = dist;
+                    }
+                }
+                return target;
+            }
             return null;
         }
         public Player GetPlayer() {

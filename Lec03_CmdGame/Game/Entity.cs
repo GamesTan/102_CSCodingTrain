@@ -6,20 +6,30 @@ namespace GamesTan.Lec03_CmdGame {
         public int health;
         public string name;
 
+        public int initHealth;
+
         public float x;
         public float y;
 
-
+        public bool isHurted; // 是否被攻击了
+        public float hurtTimer;
+        public float hurtDuration = 0.3f; //受伤的持续时间
         public void Awake() {
+            initHealth = health;
             Debug.Log(" " + name + " Awake");
         }
         public virtual void Update() {
             Debug.Log(" " + name + " update");
+            hurtTimer += Game.deltaTime;
+            if (hurtTimer > hurtDuration) {
+                isHurted = false;
+            }
         }
         const int MinAtkDistance = 2;
 
         public float cd = 1; // 技能cd
         public float cdTimer;
+
 
         protected void Attack(Entity target) {
             cdTimer += Game.deltaTime;
@@ -36,6 +46,8 @@ namespace GamesTan.Lec03_CmdGame {
             if (len > MinAtkDistance) {
                 return;
             }
+            target.isHurted = true;
+            target.hurtTimer = 0;
 
             var rawHealth = target.health;
             target.health -= damage;

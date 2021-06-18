@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace GamesTan.Lec03_CmdGame {
     class Program {
+
         static void Main(string[] args) {
 
             var game = new Game();
@@ -19,10 +20,14 @@ namespace GamesTan.Lec03_CmdGame {
                 }
             });
             thread.Start();
-            
+            var lastTime = DateTime.Now;
             while (true) {
-                Thread.Sleep(100);
-                Game.deltaTime = 0.1f;
+                Thread.Sleep(FrameIntervalMs);
+                var diff = DateTime.Now - lastTime;
+                var deltaTime = (float)diff.TotalSeconds;
+                lastTime = DateTime.Now;
+
+                Game.deltaTime = deltaTime;
                 game.Update();
                 DrawGame(game);
                 Console.WriteLine(Game.inputChar);
@@ -30,6 +35,7 @@ namespace GamesTan.Lec03_CmdGame {
             }
             Console.ReadLine();
         }
+        static int FrameIntervalMs = 100; // 帧间隔时间 单位毫秒ms
 
         static char[,] mapData = new char[Game.RowCount, Game.RowCount];
         private static void DrawGame(Game game) {

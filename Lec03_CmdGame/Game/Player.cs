@@ -7,7 +7,7 @@ namespace GamesTan.Lec03_CmdGame {
         public override void Update() {
 
             // 靠近敌人
-            var target = Game.Instance.GetEnemy();
+            var target = Game.Instance.GetEnemy(x,y);
             if (target == null) return;
             var xDiff = target.x - this.x;
             var yDiff = target.y - this.y;
