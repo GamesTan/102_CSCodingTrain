@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lec01_HelloWorld", "Lec01_H
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lec02_GuessNumber", "Lec02_GuessNumber\Lec02_GuessNumber.csproj", "{650FAAD4-AA48-47E2-81E3-1CE62A0A9E89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lec03_CmdGame", "Lec03_CmdGame\Lec03_CmdGame.csproj", "{672B92C5-DE16-4422-B3D3-6790801CB782}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lec03_CmdGame", "Lec03_CmdGame\Lec03_CmdGame.csproj", "{6C69B452-F3C6-4444-8652-DC0BD2730A75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{650FAAD4-AA48-47E2-81E3-1CE62A0A9E89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{650FAAD4-AA48-47E2-81E3-1CE62A0A9E89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{650FAAD4-AA48-47E2-81E3-1CE62A0A9E89}.Release|Any CPU.Build.0 = Release|Any CPU
-		{672B92C5-DE16-4422-B3D3-6790801CB782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{672B92C5-DE16-4422-B3D3-6790801CB782}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{672B92C5-DE16-4422-B3D3-6790801CB782}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{672B92C5-DE16-4422-B3D3-6790801CB782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C69B452-F3C6-4444-8652-DC0BD2730A75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C69B452-F3C6-4444-8652-DC0BD2730A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C69B452-F3C6-4444-8652-DC0BD2730A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C69B452-F3C6-4444-8652-DC0BD2730A75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

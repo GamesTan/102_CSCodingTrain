@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{672B92C5-DE16-4422-B3D3-6790801CB782}</ProjectGuid>
+    <ProjectGuid>{6C69B452-F3C6-4444-8652-DC0BD2730A75}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Lec03_CmdGame</RootNamespace>
     <AssemblyName>Lec03_CmdGame</AssemblyName>
@@ -43,19 +43,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Game\Debug.cs" />
-    <Compile Include="Game\Enemy.cs" />
-    <Compile Include="Game\Entity.cs" />
-    <Compile Include="Game\Game.cs" />
-    <Compile Include="Game\Player.cs" />
+    <Compile Include="Game\Actor\Actor.cs" />
+    <Compile Include="Game\Component\AI.cs" />
+    <Compile Include="Game\Render\CmdRenderEngine.cs" />
+    <Compile Include="Game\Component\Component.cs" />
+    <Compile Include="Game\Logic\EGameState.cs" />
+    <Compile Include="Game\Actor\Enemy.cs" />
+    <Compile Include="Game\Component\EnemyAI.cs" />
+    <Compile Include="Game\Logic\Game.cs" />
+    <Compile Include="Game\Component\HurtEffect.cs" />
+    <Compile Include="Game\Logic\InputManager.cs" />
+    <Compile Include="Game\Actor\Player.cs" />
+    <Compile Include="Game\Component\PlayerAI.cs" />
+    <Compile Include="Game\Render\RenderEngine.cs" />
+    <Compile Include="Game\Render\RenderInfo.cs" />
+    <Compile Include="Game\Render\RenderInfos.cs" />
+    <Compile Include="Game\Component\Skill.cs" />
+    <Compile Include="Game\Render\UnityRenderEngine.cs" />
+    <Compile Include="Game\Util\Vector2.cs" />
+    <Compile Include="Game\Logic\World.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Game\Render\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
