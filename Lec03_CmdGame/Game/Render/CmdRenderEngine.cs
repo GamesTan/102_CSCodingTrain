@@ -1,4 +1,6 @@
-﻿namespace GamesTan.Lec03_CmdGame {
+﻿using System;
+
+namespace GamesTan.Lec03_CmdGame {
     public class CmdRenderEngine : RenderEngine {
 
         // 0 表示没有 >0 正常显示  <0 表示受伤
@@ -19,20 +21,45 @@
                 // ColCount = 21
                 // -10    0    10   // 玩家位置x
                 //  0     10   20   // 显示列
-                var HalfColCount = (ColCount - 1) / 2;
-                var col = item.pos.x + HalfColCount;
+
                 // RowCount = 21
                 // 玩家 显示行
-                //  10   0
+                //  10   20
                 //       
                 //  0    10
                 //       
-                // -10   20
+                // -10   0
+                var halfColCount = (ColCount - 1) / 2;
+                var col = item.pos.x + halfColCount;
                 var haflRowCount = (RowCount - 1) / 2;
-                var row = RowCount-(item.pos.y + haflRowCount);
+                var row = item.pos.y + haflRowCount;
                 mapData[row, col] = item.color * item.type;
             }
-
+            const int CharSpaceCount = 2;
+            for (int row = 0; row < RowCount; row++) {
+                int lastIdx = -1;
+                for (int col = 0; col < ColCount; col++) {
+                    var val = mapData[RowCount- row -1, col];
+                    if (val == 0) continue;
+                    var spaceCount = col - lastIdx - 1;
+                    lastIdx = col;
+                    var spaceStr = new string(' ', spaceCount *CharSpaceCount);
+                    Console.Write(spaceStr);
+                    var color = val < 0 ? ConsoleColor.Red : ConsoleColor.White;
+                    Console.ForegroundColor = color;
+                    var ch = (Math.Abs(val) == 1 ? "M" : "P") + new string(' ',CharSpaceCount-1);
+                    Console.Write(ch);
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+                var endSpaceStr = new string(' ', (ColCount - lastIdx - 1) * CharSpaceCount);
+                Console.Write(endSpaceStr);
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write('|');
+                Console.WriteLine();
+            }
+            var endLineStr = new string('-', ColCount * CharSpaceCount);
+            Console.Write(endLineStr);
+            
         }
 
     }

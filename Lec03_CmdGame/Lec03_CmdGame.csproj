@@ -43,8 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Game\Util\Debug.cs" />
     <Compile Include="Game\Actor\Actor.cs" />
     <Compile Include="Game\Component\AI.cs" />
+    <Compile Include="Game\Util\IAwake.cs" />
+    <Compile Include="Game\Util\ILifeCycle.cs" />
+    <Compile Include="Game\Util\IUpdate.cs" />
+    <Compile Include="Game\Util\RandomUtil.cs" />
+    <Compile Include="Game\Util\Time.cs" />
     <Compile Include="Game\Render\CmdRenderEngine.cs" />
     <Compile Include="Game\Component\Component.cs" />
     <Compile Include="Game\Logic\EGameState.cs" />

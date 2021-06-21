@@ -33,6 +33,7 @@ namespace GamesTan.Lec03_CmdGame {
             actor.damage = health;
             actor.health = damage;
             actor.pos = world.GetRandomPos();
+            //Console.WriteLine(actor.pos);
             actor.AddComponent(new HurtEffect());
             actor.AddComponent(new Skill());
         }

@@ -3,17 +3,16 @@
 namespace GamesTan.Lec03_CmdGame {
 
     public class World : ILifeCycle {
-        public Vector2 xRange = new Vector2(-20, 20);
-        public Vector2 yRange = new Vector2(-20, 20);
+        public Vector2 xRange = new Vector2(-10, 10);
+        public Vector2 yRange = new Vector2(-10, 10);
         RenderEngine renderEngine;
         private List<Actor> allActor = new List<Actor>();
 
         public Vector2 GetRandomPos() {
             var x = RandomUtil.Range(xRange.x, xRange.y);
-            var y = RandomUtil.Range(xRange.x, xRange.y);
+            var y = RandomUtil.Range(yRange.x, yRange.y);
             return new Vector2(x, y);
         }
-
 
         public void AddActor(Actor actor) {
             allActor.Add(actor);

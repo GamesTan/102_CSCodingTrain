@@ -9,7 +9,7 @@ namespace GamesTan.Lec03_CmdGame {
         static void Main(string[] args) {
             var game = new Game();
             game.Awake();
-            for (int i = 0; i < 20; i++) {
+            for (int i = 0; i < 1; i++) {
                 game.Update();
             }
             Console.ReadLine();
