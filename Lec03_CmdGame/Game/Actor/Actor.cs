@@ -14,10 +14,10 @@ namespace GamesTan.Lec03_CmdGame {
             comp.Awake();
         }
         public void Awake() {
-            Console.WriteLine($" {GetType().Name} Awake");
+            Debug.Log($" {GetType().Name} Awake");
         }
         public void Update() {
-            Console.WriteLine($"\t  {GetType().Name} Update");
+            Debug.Log($"\t  {GetType().Name} Update");
             foreach (var item in components) {
                 item.Update(Time.deltaTime);
             }

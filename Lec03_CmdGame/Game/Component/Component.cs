@@ -3,10 +3,10 @@
 namespace GamesTan.Lec03_CmdGame {
     public class Component {
         public virtual void Awake() {
-            Console.WriteLine($" {GetType().Name} Awake");
+            Debug.Log($" {GetType().Name} Awake");
         }
         public virtual void Update(float dt) {
-            Console.WriteLine($"\t\t {GetType().Name} Update");
+            Debug.Log($"\t\t {GetType().Name} Update");
         }
     }
 

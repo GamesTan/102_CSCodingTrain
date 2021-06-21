@@ -25,13 +25,13 @@ namespace GamesTan.Lec03_CmdGame {
         }
 
         public void Awake() {
-            Console.WriteLine($" {GetType().Name} Awake");
+            Debug.Log($" {GetType().Name} Awake");
             renderEngine = new CmdRenderEngine(); // TODO 看环境 配置 
             renderEngine.Awake();
         }
 
         public void Update() {
-            Console.WriteLine($" {GetType().Name} Update");
+            Debug.Log($" {GetType().Name} Update");
             // 逻辑
             foreach (var item in allActor) {
                 item.Update();

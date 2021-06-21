@@ -11,7 +11,7 @@ namespace GamesTan.Lec03_CmdGame {
         public World world ;
         public EGameState state;
         public void Awake() {
-            Console.WriteLine($" {GetType().Name} Awake");
+            Debug.Log($" {GetType().Name} Awake");
             world = new World();
             world.Awake();
             // TODO Create Actors 
@@ -42,7 +42,7 @@ namespace GamesTan.Lec03_CmdGame {
         }
         public void Update() {
             Time.deltaTime = 0.1f;
-            Console.WriteLine($" {GetType().Name} Update  FrameCount {Time.FrameCount}");
+            Debug.Log($" {GetType().Name} Update  FrameCount {Time.FrameCount}");
             world.Update();
             Time.FrameCount++;
         }
