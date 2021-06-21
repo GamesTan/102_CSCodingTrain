@@ -2,11 +2,6 @@
 
 namespace GamesTan.Lec03_CmdGame {
 
-    public class Time {
-        public static float deltaTime;
-        public static int FrameCount = 0;
-    }
-
     public class Game : ILifeCycle {
         public World world ;
         public EGameState state;
@@ -34,9 +29,10 @@ namespace GamesTan.Lec03_CmdGame {
             return enemy;
         }
 
-        private static void InitActor(Actor actor,int health, int damage) {
+        private void InitActor(Actor actor,int health, int damage) {
             actor.damage = health;
             actor.health = damage;
+            actor.pos = world.GetRandomPos();
             actor.AddComponent(new HurtEffect());
             actor.AddComponent(new Skill());
         }
