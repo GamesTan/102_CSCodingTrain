@@ -1,4 +1,4 @@
-﻿namespace GamesTans.Lec03_CmdGame {
+﻿namespace GamesTan.Lec03_CmdGame {
     public enum EGameState { 
         Playing,
         Win,

@@ -1,4 +1,4 @@
-﻿namespace GamesTans.Lec03_CmdGame {
+﻿namespace GamesTan.Lec03_CmdGame {
     public struct Vector2 {
         public int x;
         public int y;
