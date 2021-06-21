@@ -47,7 +47,16 @@ namespace GamesTan.Lec03_CmdGame {
                 info.type = item.Type;
                 val.AddInfo(info);
             }
+            val.AddExtInfos(allActor);
             return val;
+        }
+
+        public Vector2 GetValidPos(Vector2 pos) {
+            if (pos.x < xRange.x) pos.x = xRange.x;
+            if (pos.x > xRange.y) pos.x = xRange.y;
+            if (pos.y < yRange.x) pos.y = yRange.x;
+            if (pos.y > yRange.y) pos.y = yRange.y;
+            return pos;
         }
     }
 

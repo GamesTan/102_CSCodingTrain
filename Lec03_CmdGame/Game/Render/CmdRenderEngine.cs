@@ -10,6 +10,7 @@ namespace GamesTan.Lec03_CmdGame {
             mapData = new int[rowCount, colCount];
         }
         public override void Render(RenderInfos info) {
+            Console.Clear();
             Debug.Log($" {GetType().Name} Update");
             for (int row = 0; row < RowCount; row++) {
                 for (int col = 0; col < ColCount; col++) {
@@ -58,8 +59,11 @@ namespace GamesTan.Lec03_CmdGame {
                 Console.WriteLine();
             }
             var endLineStr = new string('-', ColCount * CharSpaceCount);
-            Console.Write(endLineStr);
-            
+            Console.WriteLine(endLineStr);
+            var extraInfos = info.GetExtInfos();
+            foreach (var item in extraInfos) {
+                Console.WriteLine(item);
+            }
         }
 
     }

@@ -4,9 +4,19 @@ using System.Collections.Generic;
 namespace GamesTan.Lec03_CmdGame {
     public class Actor {
         public virtual int Type => 0;
-        public Vector2 pos;
+        public Vector2 _pos;
+        public Vector2 pos {
+            get => _pos;
+            set {
+                value = world.GetValidPos(value);
+                _pos = value;
+            }
+        }
+
         public int damage;
         public int health;
+
+        public World world;
 
         public bool isHurt;
 
@@ -14,6 +24,7 @@ namespace GamesTan.Lec03_CmdGame {
 
         public void AddComponent(Component comp) {
             components.Add(comp);
+            comp.Bind(this);
             comp.Awake();
         }
         public void Awake() {
@@ -25,6 +36,9 @@ namespace GamesTan.Lec03_CmdGame {
                 item.Update(Time.deltaTime);
             }
 
+        }
+        public override string ToString() {
+            return $" pos {pos} h:{health} type: {Type} isHurt:{ isHurt}";
         }
     }
 }

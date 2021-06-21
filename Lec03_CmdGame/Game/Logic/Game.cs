@@ -30,6 +30,7 @@ namespace GamesTan.Lec03_CmdGame {
         }
 
         private void InitActor(Actor actor,int health, int damage) {
+            actor.world = world;
             actor.damage = health;
             actor.health = damage;
             actor.pos = world.GetRandomPos();
