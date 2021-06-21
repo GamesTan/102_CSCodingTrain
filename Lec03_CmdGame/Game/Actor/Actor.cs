@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GamesTans.Lec03_CmdGame {
-    public class Time {
-        public static int FrameCount;
-        public static float deltaTime;
-    }
+namespace GamesTan.Lec03_CmdGame {
     public class Actor {
         public Vector2 pos;
         public int damage;
