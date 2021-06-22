@@ -1,23 +1,9 @@
 ﻿using System;
 
 namespace GamesTan.Lec03_CmdGame {
-    public class GameState {
-        // 单例模式  全局唯一的实例 
-        public static GameState Instance { get; private set; } = new GameState();
-        // 私有构造函数 外面不能创建对象
-        private GameState() { }
-
-        public EGameState state;
-        public int score;
-
-        public override string ToString() {
-            return $"state:{state}  score:{ score}";
-        }
-    }
-
 
     public class Game : ILifeCycle {
-        public World world ;
+        public World world;
         public EGameState state;
         public void Awake() {
             Debug.Log($" {GetType().Name} Awake");
@@ -25,25 +11,25 @@ namespace GamesTan.Lec03_CmdGame {
             world.Awake();
             // TODO Create Actors 
             world.AddActor(CreatePlayer(1000, 40));
-            world.AddActor(CreateEmemy(100, 10));
-            world.AddActor(CreateEmemy(100, 10));
-            world.AddActor(CreateEmemy(100, 10));
+            world.AddActor(CreateEnemy(100, 10));
+            world.AddActor(CreateEnemy(100, 10));
+            world.AddActor(CreateEnemy(100, 10));
         }
 
-        Actor CreatePlayer(int health,int damage) {
+        Actor CreatePlayer(int health, int damage) {
             var player = new Player();
             InitActor(player, health, damage);
             player.AddComponent(new PlayerAI());
             return player;
         }
-        Actor CreateEmemy(int health, int damage) {
+        Actor CreateEnemy(int health, int damage) {
             var enemy = new Enemy();
-            InitActor(enemy,health, damage);
+            InitActor(enemy, health, damage);
             enemy.AddComponent(new EnemyAI());
             return enemy;
         }
 
-        private void InitActor(Actor actor,int health, int damage) {
+        private void InitActor(Actor actor, int health, int damage) {
             actor.world = world;
             actor.damage = damage;
             actor.health = health;
@@ -55,12 +41,12 @@ namespace GamesTan.Lec03_CmdGame {
         public void Update() {
             if (GameState.Instance.state != EGameState.Playing) return;
 
-            Debug.Log($" {GetType().Name} Update  FrameCount {Time.FrameCount}");
+            Debug.Log($" {GetType().Name} Update  FrameCount {Time.frameCount}");
             world.Update();
             CheckGameState();
             world.Render();
 
-            Time.FrameCount++;
+            Time.frameCount++;
         }
         private void CheckGameState() {
 

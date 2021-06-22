@@ -1,13 +1,6 @@
 ﻿using System.Collections.Generic;
 
 namespace GamesTan.Lec03_CmdGame {
-    public enum EActorType {
-        None,
-        Player,
-        Enemy,
-        EnumCount
-    }
-
     public class World : ILifeCycle {
         public Vector2 xRange = new Vector2(-10, 10);
         public Vector2 yRange = new Vector2(-10, 10);
