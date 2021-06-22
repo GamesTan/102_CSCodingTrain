@@ -39,12 +39,24 @@ namespace GamesTan.Lec03_CmdGame {
             actor.AddComponent(new Skill());
         }
         public void Update() {
-            Time.deltaTime = 0.1f;
             Debug.Log($" {GetType().Name} Update  FrameCount {Time.FrameCount}");
             world.Update();
             Time.FrameCount++;
         }
-
+        public bool OnUpdate(double timeSinceStart, double deltaTime) {
+            Time.deltaTime = (float)deltaTime;
+            Update();
+            return false;
+        }
+        public Vector2 inputVec { get; set; }
+        public void OnGetInput(char inputCh) {
+            switch (inputCh) {
+                case 'w': inputVec = new Vector2(0, 1); break;
+                case 's': inputVec = new Vector2(0, -1); break;
+                case 'a': inputVec = new Vector2(-1, 0); break;
+                case 'd': inputVec = new Vector2(1, 0); break;
+            }
+        }
     }
 
 }
