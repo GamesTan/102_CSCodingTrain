@@ -48,13 +48,12 @@ namespace GamesTan.Lec03_CmdGame {
             Update();
             return false;
         }
-        public Vector2 inputVec { get; set; }
         public void OnGetInput(char inputCh) {
             switch (inputCh) {
-                case 'w': inputVec = new Vector2(0, 1); break;
-                case 's': inputVec = new Vector2(0, -1); break;
-                case 'a': inputVec = new Vector2(-1, 0); break;
-                case 'd': inputVec = new Vector2(1, 0); break;
+                case 'w': InputManager.inputVec = new Vector2(0, 1); break;
+                case 's': InputManager.inputVec = new Vector2(0, -1); break;
+                case 'a': InputManager.inputVec = new Vector2(-1, 0); break;
+                case 'd': InputManager.inputVec = new Vector2(1, 0); break;
             }
         }
     }
