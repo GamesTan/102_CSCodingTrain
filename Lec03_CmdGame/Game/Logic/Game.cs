@@ -1,6 +1,20 @@
 ﻿using System;
 
 namespace GamesTan.Lec03_CmdGame {
+    public class GameState {
+        // 单例模式  全局唯一的实例 
+        public static GameState Instance { get; private set; } = new GameState();
+        // 私有构造函数 外面不能创建对象
+        private GameState() { }
+
+        public EGameState state;
+        public int score;
+
+        public override string ToString() {
+            return $"state:{state}  score:{ score}";
+        }
+    }
+
 
     public class Game : ILifeCycle {
         public World world ;
@@ -11,9 +25,9 @@ namespace GamesTan.Lec03_CmdGame {
             world.Awake();
             // TODO Create Actors 
             world.AddActor(CreatePlayer(1000, 40));
-            world.AddActor(CreateEmemy(300, 10));
-            world.AddActor(CreateEmemy(300, 10));
-            world.AddActor(CreateEmemy(300, 10));
+            world.AddActor(CreateEmemy(100, 10));
+            world.AddActor(CreateEmemy(100, 10));
+            world.AddActor(CreateEmemy(100, 10));
         }
 
         Actor CreatePlayer(int health,int damage) {
@@ -39,10 +53,26 @@ namespace GamesTan.Lec03_CmdGame {
             actor.AddComponent(new Skill());
         }
         public void Update() {
+            if (GameState.Instance.state != EGameState.Playing) return;
+
             Debug.Log($" {GetType().Name} Update  FrameCount {Time.FrameCount}");
             world.Update();
+            CheckGameState();
+            world.Render();
+
             Time.FrameCount++;
         }
+        private void CheckGameState() {
+
+            // 判定胜负条件
+            if (world.GetActorCount((int)EActorType.Player) == 0) {
+                GameState.Instance.state = EGameState.Loss;
+            }
+            if (world.GetActorCount((int)EActorType.Enemy) == 0) {
+                GameState.Instance.state = EGameState.Win;
+            }
+        }
+
         public bool OnUpdate(double timeSinceStart, double deltaTime) {
             Time.deltaTime = (float)deltaTime;
             Update();

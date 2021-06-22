@@ -33,7 +33,11 @@ namespace GamesTan.Lec03_CmdGame {
             target.health -= damage;
             isHurt = true;
             target.OnHurtEvent?.Invoke(this);
+            if (target.health <= 0) {
+                target.OnDied();
+            }
         }
+        protected virtual void OnDied() { }
 
 
         public void AddComponent(Component comp) {

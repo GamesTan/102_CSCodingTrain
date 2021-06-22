@@ -1,12 +1,30 @@
 ﻿using System.Collections.Generic;
 
 namespace GamesTan.Lec03_CmdGame {
+    public enum EActorType {
+        None,
+        Player,
+        Enemy,
+        EnumCount
+    }
 
     public class World : ILifeCycle {
         public Vector2 xRange = new Vector2(-10, 10);
         public Vector2 yRange = new Vector2(-10, 10);
         RenderEngine renderEngine;
         private List<Actor> allActor = new List<Actor>();
+        public const int MaxActorTypeCount = 100;
+        private int[] actorCount = new int[MaxActorTypeCount];
+        private void OnActorCreate(Actor actor) {
+            actorCount[actor.Type]++;
+        }
+        private void OnActorDestroy(Actor actor) {
+            actorCount[actor.Type]--;
+        }
+        public int GetActorCount(int type) {
+            return actorCount[type];
+        }
+
 
         public Vector2 GetRandomPos() {
             var x = RandomUtil.Range(xRange.x, xRange.y);
@@ -16,6 +34,7 @@ namespace GamesTan.Lec03_CmdGame {
 
         public void AddActor(Actor actor) {
             allActor.Add(actor);
+            OnActorCreate(actor);
             actor.Awake();
         }
         public Actor FindTarget(Vector2 pos, int type) {
@@ -51,10 +70,12 @@ namespace GamesTan.Lec03_CmdGame {
 
             for (int i = allActor.Count - 1; i >= 0; --i) {
                 if (allActor[i].health < 0) {
+                    OnActorDestroy(allActor[i]);
                     allActor.RemoveAt(i);
                 }
             }
-
+        }
+        public void Render() {
             // 渲染
             renderEngine.Render(GetRenderInfo());
         }
@@ -69,6 +90,7 @@ namespace GamesTan.Lec03_CmdGame {
                 val.AddInfo(info);
             }
             val.AddExtInfos(allActor);
+            val.AddExtInfo(GameState.Instance);
             return val;
         }
 

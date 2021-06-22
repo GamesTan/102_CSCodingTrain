@@ -48,7 +48,7 @@ namespace GamesTan.Lec03_CmdGame {
                     Console.Write(spaceStr);
                     var color = val < 0 ? ConsoleColor.Red : ConsoleColor.White;
                     Console.ForegroundColor = color;
-                    var ch = (Math.Abs(val) == 1 ? "M" : "P") + new string(' ',CharSpaceCount-1);
+                    var ch = (Math.Abs(val) == (int)(EActorType.Enemy) ? "M" : "P") + new string(' ', CharSpaceCount - 1);
                     Console.Write(ch);
                     Console.ForegroundColor = ConsoleColor.White;
                 }
