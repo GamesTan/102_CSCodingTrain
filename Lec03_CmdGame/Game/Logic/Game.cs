@@ -10,11 +10,6 @@ namespace GamesTan.Lec03_CmdGame {
             world = new World();
             world.Awake();
             LoadSceneFromConfig();
-            // TODO Create Actors 
-            //world.AddActor(CreatePlayer(1000, 40));
-            //world.AddActor(CreateEnemy(100, 10));
-            //world.AddActor(CreateEnemy(100, 10));
-            //world.AddActor(CreateEnemy(100, 10));
         }
         
         private void LoadSceneFromConfig() {
@@ -38,28 +33,7 @@ namespace GamesTan.Lec03_CmdGame {
                 world.AddActor(actor);
             }
         }
-        Actor CreatePlayer(int health, int damage) {
-            var player = new Player();
-            InitActor(player, health, damage);
-            player.AddComponent(new PlayerAI());
-            return player;
-        }
-        Actor CreateEnemy(int health, int damage) {
-            var enemy = new Enemy();
-            InitActor(enemy, health, damage);
-            enemy.AddComponent(new EnemyAI());
-            return enemy;
-        }
 
-        private void InitActor(Actor actor, int health, int damage) {
-            actor.world = world;
-            actor.damage = damage;
-            actor.health = health;
-            actor.pos = world.GetRandomPos();
-            //Console.WriteLine(actor.pos);
-            actor.AddComponent(new HurtEffect());
-            actor.AddComponent(new Skill());
-        }
         public void Update() {
             if (GameState.Instance.state != EGameState.Playing) return;
 
