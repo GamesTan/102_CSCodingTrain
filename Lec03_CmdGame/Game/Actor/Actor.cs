@@ -45,11 +45,11 @@ namespace GamesTan.Lec03_CmdGame {
             comp.Bind(this);
             comp.Awake();
         }
-        public void Awake() {
+        public virtual void Awake() {
             initHealth = health;
             Debug.Log($" {GetType().Name} Awake");
         }
-        public void Update() {
+        public virtual void Update() {
             Debug.Log($"\t  {GetType().Name} Update");
             foreach (var item in components) {
                 item.Update(Time.deltaTime);

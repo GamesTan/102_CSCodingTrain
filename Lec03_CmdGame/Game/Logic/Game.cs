@@ -9,13 +9,35 @@ namespace GamesTan.Lec03_CmdGame {
             Debug.Log($" {GetType().Name} Awake");
             world = new World();
             world.Awake();
+            LoadSceneFromConfig();
             // TODO Create Actors 
-            world.AddActor(CreatePlayer(1000, 40));
-            world.AddActor(CreateEnemy(100, 10));
-            world.AddActor(CreateEnemy(100, 10));
-            world.AddActor(CreateEnemy(100, 10));
+            //world.AddActor(CreatePlayer(1000, 40));
+            //world.AddActor(CreateEnemy(100, 10));
+            //world.AddActor(CreateEnemy(100, 10));
+            //world.AddActor(CreateEnemy(100, 10));
         }
-
+        
+        private void LoadSceneFromConfig() {
+            var allLines = System.IO.File.ReadAllLines("../../config/init.txt");
+            var nameSpace = GetType().Namespace;
+            foreach (var item in allLines) {
+                var strs = item.Split(',');
+                int i = 0;
+                var fullName = $"{nameSpace}.{strs[i++]}";
+                var actor = GetType().Assembly.CreateInstance(fullName) as Actor;
+                actor.health = int.Parse(strs[i++]);
+                actor.damage = int.Parse(strs[i++]);
+                actor.world = world;
+                actor.pos = world.GetRandomPos();
+                var compStrs = strs[i++].Split('|');
+                foreach (var compStr in compStrs) {
+                    var compFullName = $"{nameSpace}.{compStr}";
+                    var comp = GetType().Assembly.CreateInstance(compFullName) as Component;
+                    actor.AddComponent(comp);
+                }
+                world.AddActor(actor);
+            }
+        }
         Actor CreatePlayer(int health, int damage) {
             var player = new Player();
             InitActor(player, health, damage);
