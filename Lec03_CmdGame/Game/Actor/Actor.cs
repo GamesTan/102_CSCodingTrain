@@ -15,6 +15,7 @@ namespace GamesTan.Lec03_CmdGame {
 
         public int damage;
         public int health;
+        public int initHealth;// 初始血量
 
         public World world;
 
@@ -41,6 +42,7 @@ namespace GamesTan.Lec03_CmdGame {
             comp.Awake();
         }
         public void Awake() {
+            initHealth = health;
             Debug.Log($" {GetType().Name} Awake");
         }
         public void Update() {

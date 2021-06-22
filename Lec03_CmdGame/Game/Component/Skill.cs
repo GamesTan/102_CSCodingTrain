@@ -10,6 +10,7 @@
             if (cdTimer < cd) return;
             cdTimer = 0;
             var target = actor.FindTarget();
+            if (target == null) return;
             if ((target.pos - actor.pos).magnitude > atkDist) return;
             if (target != null) {
                 actor.Attack(target);
