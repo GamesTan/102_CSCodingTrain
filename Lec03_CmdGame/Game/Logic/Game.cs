@@ -11,7 +11,6 @@ namespace GamesTan.Lec03_CmdGame {
             world.Awake();
             LoadSceneFromConfig();
         }
-        
         private void LoadSceneFromConfig() {
             var allLines = System.IO.File.ReadAllLines("../../config/init.txt");
             var nameSpace = GetType().Namespace;

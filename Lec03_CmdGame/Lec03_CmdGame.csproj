@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Game\Component\Skill.cs" />
     <Compile Include="Game\Logic\EActorType.cs" />
     <Compile Include="Game\Logic\GameState.cs" />
     <Compile Include="Game\Util\Debug.cs" />
@@ -67,7 +68,6 @@
     <Compile Include="Game\Render\RenderEngine.cs" />
     <Compile Include="Game\Render\RenderInfo.cs" />
     <Compile Include="Game\Render\RenderInfos.cs" />
-    <Compile Include="Game\Component\Skill.cs" />
     <Compile Include="Game\Render\UnityRenderEngine.cs" />
     <Compile Include="Game\Util\Vector2.cs" />
     <Compile Include="Game\Logic\World.cs" />

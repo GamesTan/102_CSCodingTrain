@@ -1,4 +1,5 @@
 ﻿namespace GamesTan.Lec03_CmdGame {
+
     public class Skill : Component {
         public float cd = 1;
         public float cdTimer;

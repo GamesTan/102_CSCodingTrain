@@ -1,5 +1,5 @@
 Player,1000,30,PlayerAI|HurtEffect|Skill|Buff
 Enemy,100,10,EnemyAI|HurtEffect|Skill
 Enemy,120,10,EnemyAI|HurtEffect|Skill
-Enemy,500,10,EnemyAI|HurtEffect|Skill|Buff
-Boss,50,10,EnemyAI|HurtEffect|Skill
+Enemy,540,10,EnemyAI|HurtEffect|Skill
+Boss,540,10,EnemyAI|HurtEffect|Skill
