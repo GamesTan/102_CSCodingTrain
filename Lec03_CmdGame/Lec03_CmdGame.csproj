@@ -43,11 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Driver.cs" />
+    <Compile Include="Game\Logic\EActorType.cs" />
     <Compile Include="Game\Logic\GameState.cs" />
     <Compile Include="Game\Util\Debug.cs" />
     <Compile Include="Game\Actor\Actor.cs" />
     <Compile Include="Game\Component\AI.cs" />
+    <Compile Include="Game\Util\Driver.cs" />
     <Compile Include="Game\Util\IAwake.cs" />
     <Compile Include="Game\Util\ILifeCycle.cs" />
     <Compile Include="Game\Util\IUpdate.cs" />
