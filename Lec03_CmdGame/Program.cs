@@ -41,6 +41,7 @@ namespace GamesTan.Lec03_CmdGame {
                     return;
                 } catch (Exception e) {
                     Console.WriteLine(e.ToString());
+                    return;
                 }
             }
         }

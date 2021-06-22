@@ -18,6 +18,20 @@ namespace GamesTan.Lec03_CmdGame {
             allActor.Add(actor);
             actor.Awake();
         }
+        public Actor FindTarget(Vector2 pos, int type) {
+            float lastDist = float.MaxValue;
+            Actor target = null;
+            foreach (var item in allActor) {
+                if (item.health > 0 && item.Type != type) {
+                    var dist = (item.pos - pos).magnitude;
+                    if (dist < lastDist) {
+                        target = item;
+                        lastDist = dist;
+                    }
+                }
+            }
+            return target;
+        }
 
         public void Awake() {
             Debug.Log($" {GetType().Name} Awake");
@@ -34,6 +48,13 @@ namespace GamesTan.Lec03_CmdGame {
             foreach (var item in allActor) {
                 item.Update();
             }
+
+            for (int i = allActor.Count - 1; i >= 0; --i) {
+                if (allActor[i].health < 0) {
+                    allActor.RemoveAt(i);
+                }
+            }
+
             // 渲染
             renderEngine.Render(GetRenderInfo());
         }

@@ -14,6 +14,8 @@
 
         public readonly static Vector2 zero = new Vector2(0, 0);
 
+        public float magnitude => (float)System.Math.Sqrt(x * x + y * y);
+
         public static Vector2 operator +(Vector2 a, Vector2 b) => new Vector2(a.x + b.x, a.y + b.y);
         public static Vector2 operator -(Vector2 a, Vector2 b) => new Vector2(a.x - b.x, a.y - b.y);
         public static Vector2 operator *(Vector2 a, Vector2 b) => new Vector2(a.x * b.x, a.y * b.y);
