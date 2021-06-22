@@ -21,13 +21,17 @@ namespace GamesTan.Lec03_CmdGame {
         public bool isHurt;
 
         private List<Component> components = new List<Component>();
+
+        public Action<Actor> OnHurtEvent;
+
         public Actor FindTarget() {
             return world.FindTarget(pos, Type);
         }
         public void Attack(Actor target) {
             if (target.health <= 0) return;
             target.health -= damage;
-            target.isHurt = true;
+            isHurt = true;
+            target.OnHurtEvent?.Invoke(this);
         }
 
 

@@ -53,7 +53,7 @@ namespace GamesTan.Lec03_CmdGame {
             var game = new Game();
             game.Awake();
 
-            Driver.FrameIntervalMS = 300; // 100 毫秒更新一次
+            Driver.FrameIntervalMS = 30; // 100 毫秒更新一次
             Driver.Start(game.OnGetInput, game.OnUpdate);
 
             Console.ReadLine();
