@@ -1,4 +1,4 @@
-# 102  C#编程实践
+# 102  C#编程实战
 
 ==========================
 
@@ -22,13 +22,20 @@
 
 | 课时数 | 课时标题 | 在线播放 |
 |:-----:|:--------|:-------|
-|第 1 课|[c# 开发环境搭建](Doc/Lecture01.md)|[B站](https://www.bilibili.com/video/BV1sy4y1u7cw?p=1) 
-|第 2 课|[猜数字游戏](Doc/Lecture03.md)|[B站](https://www.bilibili.com/video/BV1sy4y1u7cw?p=2) 
-|第 3 课|[命令行RPG小游戏](Doc/Lecture03.md)|[B站](https://www.bilibili.com/video/BV1sy4y1u7cw?p=3) 
+|第 0 课|[课程介绍](Doc/Lecture01.md)|[B站](https://www.bilibili.com/video/BV1sy4y1u7cw?p=1) 
+|第 1 课|[开发环境搭建,猜数字游戏,断点调试](Doc/Lecture01.md)|[B站](https://www.bilibili.com/video/BV1sy4y1u7cw?p=1) 
+|第 2 课|[UML&需求分析](Doc/Lecture03.md)|[B站](https://www.bilibili.com/video/BV1sy4y1u7cw?p=2) 
+|第 3 课|[UML类图设计](Doc/Lecture03.md)|[B站](https://www.bilibili.com/video/BV1sy4y1u7cw?p=2) 
+|第 4 课|[将UML翻译为代码](Doc/Lecture03.md)|[B站](https://www.bilibili.com/video/BV1sy4y1u7cw?p=3) 
+|第 5 课|[让整个游戏跑起来](Doc/Lecture03.md)|[B站](https://www.bilibili.com/video/BV1L64y197DQ/) 
+|第 6 课|[游戏的渲染绘制](Doc/Lecture03.md)|[B站](https://www.bilibili.com/video/BV1sy4y1u7cw?p=3) 
+|第 7 课|[帧驱动，输入获取和玩家移动](Doc/Lecture03.md)|[B站](https://www.bilibili.com/video/BV1sy4y1u7cw?p=3) 
+|第 8 课|[攻击，闪红，逃跑AI](Doc/Lecture03.md)|[B站](https://www.bilibili.com/video/BV1sy4y1u7cw?p=3) 
+|第 9 课|[处理游戏状态，代码整理](Doc/Lecture03.md)|[B站](https://www.bilibili.com/video/BV1sy4y1u7cw?p=3) 
+|第 10 课|[开放游戏配置](Doc/Lecture03.md)|[B站](https://www.bilibili.com/video/BV1sy4y1u7cw?p=3) 
 
 ### 前置课程
 - [2小时快速学完c#编程](https://www.bilibili.com/video/BV1sy4y1u7cw)
 
 ### 参考网站
-
 - [c# 官方文档](https://docs.microsoft.com/zh-cn/dotnet/csharp/)
