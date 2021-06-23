@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Game\Actor\Boss.cs" />
+    <Compile Include="Game\Component\Buff.cs" />
     <Compile Include="Game\Component\Skill.cs" />
     <Compile Include="Game\Logic\EActorType.cs" />
     <Compile Include="Game\Logic\GameState.cs" />
