@@ -35,7 +35,7 @@
 |第 10 课|[开放游戏配置](Doc/Lecture03.md)|[B站](https://www.bilibili.com/video/BV1sy4y1u7cw?p=10)|[资料下载地址](https://github.com/GamesTan/102_CSCodingTrain/archive/refs/tags/v0.0.10.zip) 
 
 ### 前置课程
-- [2小时快速学完c#编程](https://www.bilibili.com/video/BV1sy4y1u7cw)
+- [【101】c#编程](https://www.bilibili.com/video/BV1sy4y1u7cw)
 
 ### 参考网站
 - [c# 官方文档](https://docs.microsoft.com/zh-cn/dotnet/csharp/)
