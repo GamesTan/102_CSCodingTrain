@@ -32,7 +32,7 @@
 |第 7 课|[帧驱动，输入获取和玩家移动](Doc/Lecture03.md)|[B站](https://www.bilibili.com/video/BV1sy4y1u7cw?p=3) 
 |第 8 课|[攻击，闪红，逃跑AI](Doc/Lecture03.md)|[B站](https://www.bilibili.com/video/BV1sy4y1u7cw?p=3) 
 |第 9 课|[处理游戏状态，代码整理](Doc/Lecture03.md)|[B站](https://www.bilibili.com/video/BV1sy4y1u7cw?p=3) 
-|第 10 课|[开放游戏配置](Doc/Lecture03.md)|[B站](https://www.bilibili.com/video/BV1sy4y1u7cw?p=3) 
+|第 10 课|[开放游戏配置](Doc/Lecture03.md)|[B站](https://www.bilibili.com/video/BV1sy4y1u7cw?p=10) 
 
 ### 前置课程
 - [2小时快速学完c#编程](https://www.bilibili.com/video/BV1sy4y1u7cw)
