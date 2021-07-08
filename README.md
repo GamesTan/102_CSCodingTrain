@@ -3,7 +3,7 @@
 ==========================
 
 ### 其他所有课程
-[所有课程链接地址](https://github.com/GamesTan/GameDevelopTutorials/README.md)
+[所有课程链接地址](https://github.com/GamesTan/GameDevelopTutorials)
 
 
 ### 基本信息
