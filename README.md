@@ -5,6 +5,8 @@
 ### 其他所有课程
 [所有课程链接地址](https://github.com/GamesTan/GameDevelopTutorials)
 
+### 交流qq群
+  **539197638**
 
 ### 基本信息
 - **教程讲师**：[游戏谭](https://space.bilibili.com/481436151)
