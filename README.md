@@ -2,14 +2,15 @@
 
 ==========================
 
-### 基本信息
+### 其他所有课程
+[所有课程链接地址](https://github.com/GamesTan/GameDevelopTutorials/README.md)
 
+
+### 基本信息
 - **教程讲师**：[游戏谭](https://space.bilibili.com/481436151)
-- **教程简介**：《C#编程实践》 针对学习完 [2小时快速学完c#编程](https://www.bilibili.com/video/BV1sy4y1u7cw) 后的一个小练习，加深对c#语言各种特性的使用
-- **开发环境**：c# 语言 
+- **教程简介**：《102-C#编程实践》 针对学习完 [2小时快速学完c#编程](https://www.bilibili.com/video/BV1sy4y1u7cw) 后的一个小练习，加深对c#语言各种特性的使用
 - **开发工具**：VisualStudio 2019
 - **开发系统**：Windows 10 64 位
-- **其它说明**：
 - **收录网站**：
 	- [Bilibili](https://www.bilibili.com/video/BV1Ew411o73C) 
 - **课程下载**：
@@ -35,7 +36,10 @@
 |第 10 课|[开放游戏配置](Doc/Lecture03.md)|[B站](https://www.bilibili.com/video/BV1Ew411o73C?p=12)|[资料下载地址](https://github.com/GamesTan/102_CSCodingTrain/archive/refs/tags/v0.0.10.zip) 
 
 ### 前置课程
-- [【101】c#编程](https://www.bilibili.com/video/BV1sy4y1u7cw)
+- [101- c#编程](https://github.com/GamesTan/GameDevelopTutorials/Readme/101.md)
+
+### 其他所有课程
+[所有课程链接地址](https://github.com/GamesTan/GameDevelopTutorials/README.md)
 
 ### 参考网站
 - [c# 官方文档](https://docs.microsoft.com/zh-cn/dotnet/csharp/)
